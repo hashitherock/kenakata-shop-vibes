@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import { getProduct, type Product } from "@/data/products";
 import { cartTotals } from "@/lib/shop";
 
-export type CartLine = { key: string; id: string; qty: number; variant?: string };
+export type CartLine = { key: string; id: string; qty: number; variant?: string | undefined };
 export type CartLineView = CartLine & { product: Product };
 
 type ShopState = {

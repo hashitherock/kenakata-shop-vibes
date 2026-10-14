@@ -32,7 +32,7 @@ export const Route = createFileRoute("/shop")({
 });
 
 function Filters({ category, min, max, setMin, setMax, onPick }: {
-  category?: string; min: string; max: string; setMin: (v: string) => void; setMax: (v: string) => void; onPick?: () => void;
+  category?: string | undefined; min: string; max: string; setMin: (v: string) => void; setMax: (v: string) => void; onPick?: () => void;
 }) {
   return (
     <div className="space-y-8">

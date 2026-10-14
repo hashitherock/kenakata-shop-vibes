@@ -18,11 +18,11 @@ export const discountPct = (p: Pick<Product, "price" | "originalPrice">) =>
     : 0;
 
 export type ProductFilters = {
-  q?: string;
-  category?: string;
-  min?: number;
-  max?: number;
-  sort?: SortKey;
+  q?: string | undefined;
+  category?: string | undefined;
+  min?: number | undefined;
+  max?: number | undefined;
+  sort?: SortKey | undefined;
 };
 
 export function filterProducts(list: Product[], f: ProductFilters): Product[] {

@@ -49,6 +49,7 @@ function Index() {
         <img src={hero} alt="Linen dress, leather tote and skincare in a sunlit room" width={1600} height={912}
           className="absolute inset-0 h-full w-full object-cover object-[70%_center]" />
         <div className="absolute inset-0 hero-scrim" />
+        <div className="absolute inset-0 bg-background/70 sm:hidden" />
         <div className="relative mx-auto flex min-h-[460px] max-w-7xl items-center px-4 py-16 sm:min-h-[560px] sm:px-6">
           <div className="max-w-lg animate-fade-up">
             <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">Autumn edit · up to 25% off</span>

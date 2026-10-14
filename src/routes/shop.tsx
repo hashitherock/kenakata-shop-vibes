@@ -10,13 +10,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
-type ShopSearch = { q?: string; category?: string; sort?: SortKey };
+type ShopSearch = { q?: string | undefined; category?: string | undefined; sort?: SortKey | undefined };
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (s: Record<string, unknown>): ShopSearch => ({
-    q: typeof s.q === "string" && s.q ? s.q : undefined,
-    category: typeof s.category === "string" && getCategory(s.category) ? s.category : undefined,
-    sort: typeof s.sort === "string" && s.sort in sortLabels ? (s.sort as SortKey) : undefined,
+    q: typeof s["q"] === "string" && s["q"] ? s["q"] : undefined,
+    category: typeof s["category"] === "string" && getCategory(s["category"]) ? s["category"] : undefined,
+    sort: typeof s["sort"] === "string" && s["sort"] in sortLabels ? (s["sort"] as SortKey) : undefined,
   }),
   head: () => ({
     meta: [
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/shop")({
 });
 
 function Filters({ category, min, max, setMin, setMax, onPick }: {
-  category?: string; min: string; max: string; setMin: (v: string) => void; setMax: (v: string) => void; onPick?: () => void;
+  category?: string | undefined; min: string; max: string; setMin: (v: string) => void; setMax: (v: string) => void; onPick?: () => void;
 }) {
   return (
     <div className="space-y-8">

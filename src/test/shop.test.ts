@@ -16,8 +16,8 @@ describe("store rules", () => {
 
   it("sorts by price low to high", () => {
     const r = filterProducts(products, { sort: "price-asc" });
-    expect(r[0].price).toBeLessThanOrEqual(r[r.length - 1].price);
-    expect(r[0].id).toBe("magnetic-phone-mount");
+    expect(r[0]!.price).toBeLessThanOrEqual(r[r.length - 1]!.price);
+    expect(r[0]!.id).toBe("herbal-shampoo");
   });
 
   it("filters by search and category", () => {

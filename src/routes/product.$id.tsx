@@ -68,7 +68,7 @@ function ProductPage() {
       <div key={product.id} className="grid gap-10 lg:grid-cols-2">
         <div className="space-y-3 animate-fade-up">
           <div className="aspect-square overflow-hidden rounded-3xl bg-product-bg">
-            <ProductImage key={view} eager src={product.image} alt={`${product.name} — ${views[view].label}`} className={cn("animate-in fade-in-0 duration-300", views[view].cls)} />
+            <ProductImage key={view} eager src={product.image} alt={`${product.name} — ${views[view]?.label}`} className={cn("animate-in fade-in-0 duration-300", views[view]?.cls)} />
           </div>
           <div className="flex gap-3" role="tablist" aria-label="Product images">
             {views.map((v, i) => (

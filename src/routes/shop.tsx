@@ -10,13 +10,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
-type ShopSearch = { q?: string; category?: string; sort?: SortKey };
+type ShopSearch = { q?: string | undefined; category?: string | undefined; sort?: SortKey | undefined };
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (s: Record<string, unknown>): ShopSearch => ({
-    q: typeof s.q === "string" && s.q ? s.q : undefined,
-    category: typeof s.category === "string" && getCategory(s.category) ? s.category : undefined,
-    sort: typeof s.sort === "string" && s.sort in sortLabels ? (s.sort as SortKey) : undefined,
+    q: typeof s["q"] === "string" && s["q"] ? s["q"] : undefined,
+    category: typeof s["category"] === "string" && getCategory(s["category"]) ? s["category"] : undefined,
+    sort: typeof s["sort"] === "string" && s["sort"] in sortLabels ? (s["sort"] as SortKey) : undefined,
   }),
   head: () => ({
     meta: [
